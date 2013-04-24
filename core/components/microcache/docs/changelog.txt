@@ -1,0 +1,5 @@
+Changelog for microcache.
+
+microcache 1.0.0-beta (April 24, 2013)
+====================================
+- Initial release.
