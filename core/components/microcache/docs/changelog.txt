@@ -1,5 +1,7 @@
 Changelog for microcache.
 
+microcache 1.0.0-pl (November 1, 2013)
+====================================
 - Fix resolver for PluginEvents
 
 microcache 1.0.0-beta (April 24, 2013)
