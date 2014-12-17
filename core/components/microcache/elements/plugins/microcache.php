@@ -17,12 +17,14 @@ switch ($modx->event->name) {
             if ((($isAnonymous && !empty($skipIfTagsRemainAnonymous)) || (!$isAnonymous && !empty($skipIfTagsRemain))) && $modx->parser->collectElementTags($modx->resource->_content, $matches)) break;
             /* if specified, limit caching by mime-type */
             if (!empty($mimeTypes)) {
-                $validMimeTypes = array_walk(explode(',', strtolower($mimeTypes)), 'trim');
+                $validMimeTypes = explode(',', strtolower($mimeTypes));
+				array_walk($validMimeTypes, 'trim');
                 if (!in_array(strtolower($modx->resource->ContentType->get('mime_type')), $validMimeTypes)) break;
             }
             /* if specified, limit caching by ContentTypes */
             if (!empty($contentTypes)) {
-                $validContentTypes = array_walk(explode(',', $contentTypes), 'trim');
+                $validContentTypes = explode(',', $contentTypes);
+				array_walk($validContentTypes, 'trim');
                 if (!in_array($modx->resource->ContentType->get('id'), $validContentTypes)) break;
             }
             /* set HTTP headers allowing clients and/or upstream cache servers to cache responses */
