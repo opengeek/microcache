@@ -1,5 +1,6 @@
 Changelog for microcache.
 
+- Add header_remove implementation to support PHP < 5.3
 - Fix mimeTypes and contentTypes declaration processing
 
 microcache 1.0.0-pl (November 1, 2013)

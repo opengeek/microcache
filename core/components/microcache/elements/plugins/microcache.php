@@ -1,6 +1,7 @@
 <?php
 /**
  * @var modX $modx
+ * @var array $scriptProperties
  */
 switch ($modx->event->name) {
     case 'OnWebPagePrerender':
@@ -18,13 +19,13 @@ switch ($modx->event->name) {
             /* if specified, limit caching by mime-type */
             if (!empty($mimeTypes)) {
                 $validMimeTypes = explode(',', strtolower($mimeTypes));
-				array_walk($validMimeTypes, 'trim');
+                array_walk($validMimeTypes, 'trim');
                 if (!in_array(strtolower($modx->resource->ContentType->get('mime_type')), $validMimeTypes)) break;
             }
             /* if specified, limit caching by ContentTypes */
             if (!empty($contentTypes)) {
                 $validContentTypes = explode(',', $contentTypes);
-				array_walk($validContentTypes, 'trim');
+                array_walk($validContentTypes, 'trim');
                 if (!in_array($modx->resource->ContentType->get('id'), $validContentTypes)) break;
             }
             /* set HTTP headers allowing clients and/or upstream cache servers to cache responses */
@@ -92,4 +93,10 @@ switch ($modx->event->name) {
             }
         }
         break;
+}
+
+if (!function_exists('header_remove')) {
+    function header_remove($str) {
+        header($str.':');
+    }
 }
