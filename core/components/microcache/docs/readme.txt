@@ -1,8 +1,8 @@
 --------------------
 Extra: microcache
 --------------------
-Version: 1.0.0-pl
-Released: November 1, 2013
+Version: 1.0.1-pl
+Released: February 10, 2015
 Since: April 24, 2013
 Author: Jason Coward <jason@modx.com>
 
