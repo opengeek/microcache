@@ -1,5 +1,7 @@
 Changelog for microcache.
 
+- Fix mimeTypes and contentTypes declaration processing
+
 microcache 1.0.0-pl (November 1, 2013)
 ====================================
 - Fix resolver for PluginEvents
